@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Skills_International
 {
-    public partial class landing : Form
+    public partial class users : Form
     {
-        public landing()
+        public users()
         {
             InitializeComponent();
         }
 
-        private void landing_Load(object sender, EventArgs e)
+        private void users_Load(object sender, EventArgs e)
         {
 
         }

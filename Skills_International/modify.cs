@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Skills_International
 {
-    public partial class landing : Form
+    public partial class modify : Form
     {
-        public landing()
+        public modify()
         {
             InitializeComponent();
-        }
-
-        private void landing_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

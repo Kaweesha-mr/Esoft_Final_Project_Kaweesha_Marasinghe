@@ -124,4 +124,19 @@
   <data name="Logo1-200x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo1-200x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="show-property-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show-property-512.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-user-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-user-256.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account-logout-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account-logout-512.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="group-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\group-512.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-property-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-property-512.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

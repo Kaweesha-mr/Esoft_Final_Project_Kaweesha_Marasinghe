@@ -63,6 +63,36 @@ namespace Skills_International.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_logout_512 {
+            get {
+                object obj = ResourceManager.GetObject("account-logout-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_256 {
+            get {
+                object obj = ResourceManager.GetObject("add-user-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_property_512 {
+            get {
+                object obj = ResourceManager.GetObject("edit-property-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Google_Noto_Emoji_Travel_Places_42496_school {
             get {
                 object obj = ResourceManager.GetObject("Google-Noto-Emoji-Travel-Places-42496-school", resourceCulture);
@@ -73,9 +103,29 @@ namespace Skills_International.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap group_512 {
+            get {
+                object obj = ResourceManager.GetObject("group-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo1_200x100 {
             get {
                 object obj = ResourceManager.GetObject("Logo1-200x100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_property_512 {
+            get {
+                object obj = ResourceManager.GetObject("show-property-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
