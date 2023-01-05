@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Skills_International
 {
@@ -17,6 +18,8 @@ namespace Skills_International
             InitializeComponent();
         }
 
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
+
         private void login_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +27,35 @@ namespace Skills_International
 
         private void login_Load_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            username.Clear();
+            password.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string user = username.Text;
+            string pass = password.Text;
+
+            string query = "SELECT * FROM user WHERE username='" +user+"'AND password='" +pass+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader row = cmd.ExecuteReader();
+
+            if (row.HasRows)
+            {
+                this.Hide();
+                landing obj = new landing();
+                obj.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid login credentials , please check username &password and try agin!", "invalid login details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
