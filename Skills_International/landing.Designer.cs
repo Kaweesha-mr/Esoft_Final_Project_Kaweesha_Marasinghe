@@ -91,6 +91,7 @@
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "New Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
@@ -122,6 +123,7 @@
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "View";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox4
             // 
@@ -153,6 +155,7 @@
             this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Logout";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox5
             // 
@@ -174,6 +177,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(152, 50);
             this.panel3.TabIndex = 2;
+            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseClick);
             // 
             // label1
             // 
@@ -185,6 +189,7 @@
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Modify";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 

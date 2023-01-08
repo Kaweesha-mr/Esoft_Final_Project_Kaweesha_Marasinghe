@@ -44,18 +44,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.clear = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
+            this.password = new System.Windows.Forms.TextBox();
+            this.userphone = new System.Windows.Forms.TextBox();
+            this.user_name = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -106,6 +106,7 @@
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "New Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
@@ -137,6 +138,7 @@
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "View";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox4
             // 
@@ -168,6 +170,7 @@
             this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Logout";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox5
             // 
@@ -200,6 +203,7 @@
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Modify";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -242,14 +246,17 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Login Details";
             // 
-            // comboBox1
+            // comboBox2
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Plum;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(564, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox2.BackColor = System.Drawing.Color.Plum;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "New Register"});
+            this.comboBox2.Location = new System.Drawing.Point(564, 36);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 28);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -264,12 +271,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.clear);
+            this.groupBox3.Controls.Add(this.add);
+            this.groupBox3.Controls.Add(this.edit);
+            this.groupBox3.Controls.Add(this.password);
+            this.groupBox3.Controls.Add(this.userphone);
+            this.groupBox3.Controls.Add(this.user_name);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
@@ -281,26 +288,59 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Parent Details";
             // 
-            // textBox5
+            // clear
             // 
-            this.textBox5.Location = new System.Drawing.Point(523, 40);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(248, 27);
-            this.textBox5.TabIndex = 21;
+            this.clear.BackColor = System.Drawing.Color.Black;
+            this.clear.Location = new System.Drawing.Point(618, 114);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(94, 29);
+            this.clear.TabIndex = 24;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = false;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
-            // textBox4
+            // add
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(248, 27);
-            this.textBox4.TabIndex = 20;
+            this.add.BackColor = System.Drawing.Color.Black;
+            this.add.Location = new System.Drawing.Point(406, 114);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(94, 29);
+            this.add.TabIndex = 23;
+            this.add.Text = "Add";
+            this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // textBox3
+            // edit
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 27);
-            this.textBox3.TabIndex = 17;
+            this.edit.BackColor = System.Drawing.Color.Black;
+            this.edit.Location = new System.Drawing.Point(513, 114);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(94, 29);
+            this.edit.TabIndex = 22;
+            this.edit.Text = "Edit";
+            this.edit.UseVisualStyleBackColor = false;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
+            // 
+            // password
+            // 
+            this.password.Location = new System.Drawing.Point(523, 40);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(248, 27);
+            this.password.TabIndex = 21;
+            // 
+            // userphone
+            // 
+            this.userphone.Location = new System.Drawing.Point(128, 114);
+            this.userphone.Name = "userphone";
+            this.userphone.Size = new System.Drawing.Size(248, 27);
+            this.userphone.TabIndex = 20;
+            // 
+            // user_name
+            // 
+            this.user_name.Location = new System.Drawing.Point(128, 40);
+            this.user_name.Name = "user_name";
+            this.user_name.Size = new System.Drawing.Size(248, 27);
+            this.user_name.TabIndex = 17;
             // 
             // label13
             // 
@@ -335,45 +375,19 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Name";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(513, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(406, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(618, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(208, 251);
+            this.dataGridView1.Location = new System.Drawing.Point(202, 251);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(819, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(825, 367);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // users
             // 
@@ -382,7 +396,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1039, 669);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
@@ -433,18 +447,18 @@
         private PictureBox pictureBox1;
         private Panel panel2;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox comboBox2;
         private Label label6;
         private GroupBox groupBox3;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox password;
+        private TextBox userphone;
+        private TextBox user_name;
         private Label label13;
         private Label label12;
         private Label label11;
-        private Button button3;
-        private Button button1;
-        private Button button2;
+        private Button clear;
+        private Button add;
+        private Button edit;
         private DataGridView dataGridView1;
     }
 }

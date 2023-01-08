@@ -18,7 +18,7 @@ namespace Skills_International
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
+        SqlConnection con = new(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace Skills_International
             string user = username.Text;
             string pass = password.Text;
 
-            string query = "SELECT * FROM user WHERE username='" +user+"'AND password='" +pass+"'";
+            string query = "SELECT * FROM login WHERE username='" +user+"'AND password='" +pass+"'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader row = cmd.ExecuteReader();
 
@@ -56,6 +56,8 @@ namespace Skills_International
             {
                 MessageBox.Show("Invalid login credentials , please check username &password and try agin!", "invalid login details", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            con.Close();
 
         }
     }

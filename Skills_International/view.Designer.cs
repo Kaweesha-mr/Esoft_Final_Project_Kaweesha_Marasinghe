@@ -105,6 +105,7 @@
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "New Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
@@ -137,6 +138,7 @@
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "View";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox4
             // 
@@ -168,6 +170,7 @@
             this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Logout";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox5
             // 
@@ -200,6 +203,7 @@
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Modify";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -238,7 +242,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 388);
+            this.dataGridView1.Size = new System.Drawing.Size(806, 535);
             this.dataGridView1.TabIndex = 7;
             // 
             // label6
@@ -246,7 +250,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(480, 27);
+            this.label6.Location = new System.Drawing.Point(498, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(218, 38);
             this.label6.TabIndex = 4;
