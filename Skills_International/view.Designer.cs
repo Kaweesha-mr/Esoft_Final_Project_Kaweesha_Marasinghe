@@ -30,6 +30,7 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NOTICE = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -44,6 +45,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -74,6 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.NOTICE);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -83,6 +86,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(196, 670);
             this.panel1.TabIndex = 5;
+            // 
+            // NOTICE
+            // 
+            this.NOTICE.AutoSize = true;
+            this.NOTICE.BackColor = System.Drawing.Color.Transparent;
+            this.NOTICE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NOTICE.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.NOTICE.Location = new System.Drawing.Point(48, 99);
+            this.NOTICE.Name = "NOTICE";
+            this.NOTICE.Size = new System.Drawing.Size(89, 28);
+            this.NOTICE.TabIndex = 8;
+            this.NOTICE.Text = "NOTICES";
+            this.NOTICE.Click += new System.EventHandler(this.NOTICE_Click);
             // 
             // panel4
             // 
@@ -229,20 +245,37 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Plum;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(-14, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1064, 25);
             this.panel2.TabIndex = 6;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label18.Location = new System.Drawing.Point(1027, -2);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(24, 25);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "X";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(221, 95);
+            this.dataGridView1.Location = new System.Drawing.Point(201, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 535);
+            this.dataGridView1.Size = new System.Drawing.Size(826, 535);
             this.dataGridView1.TabIndex = 7;
             // 
             // label6
@@ -271,6 +304,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "view";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -312,5 +346,7 @@
         private Panel panel2;
         private DataGridView dataGridView1;
         private Label label6;
+        private Label label18;
+        private Label NOTICE;
     }
 }

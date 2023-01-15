@@ -50,11 +50,34 @@ namespace Skills_International
 
         private void label4_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure, Do you really want to exit....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            var result = MessageBox.Show("Are you sure, Do you really want to logout....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if(result == DialogResult.Yes)
+            {
+                this.Hide();
+                login obj = new login();
+                obj.Show();
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
+        }
+
+        private void NOTICE_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            landing obj = new landing();
+            obj.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(landing));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NOTICE = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -61,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.NOTICE);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -70,6 +74,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(196, 670);
             this.panel1.TabIndex = 0;
+            // 
+            // NOTICE
+            // 
+            this.NOTICE.AutoSize = true;
+            this.NOTICE.BackColor = System.Drawing.Color.Transparent;
+            this.NOTICE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NOTICE.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.NOTICE.Location = new System.Drawing.Point(48, 99);
+            this.NOTICE.Name = "NOTICE";
+            this.NOTICE.Size = new System.Drawing.Size(89, 28);
+            this.NOTICE.TabIndex = 5;
+            this.NOTICE.Text = "NOTICES";
+            this.NOTICE.Click += new System.EventHandler(this.NOTICE_Click);
             // 
             // panel4
             // 
@@ -215,11 +232,25 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Plum;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(-20, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1064, 25);
             this.panel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(1034, -3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 25);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "X";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -232,12 +263,25 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Skills International-Management";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.richTextBox1.Location = new System.Drawing.Point(201, 31);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(826, 626);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // landing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1039, 669);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -247,6 +291,7 @@
             this.Text = "landing";
             this.Load += new System.EventHandler(this.landing_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -284,5 +329,8 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label5;
+        private Label label6;
+        private Label NOTICE;
+        private RichTextBox richTextBox1;
     }
 }

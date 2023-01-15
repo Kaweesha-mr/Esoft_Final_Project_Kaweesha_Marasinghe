@@ -1,9 +1,5 @@
-﻿using System;
+﻿using System.Data;
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using System.Net;
-using System.Reflection;
-using System.Data;
 
 namespace Skills_International
 {
@@ -17,7 +13,7 @@ namespace Skills_International
             showdata();
 
         }
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
+        // SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
         public void fillcombobox()
         {
             SqlConnection con = new(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
@@ -70,10 +66,12 @@ namespace Skills_International
 
         private void label4_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure, Do you really want to exit....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            var result = MessageBox.Show("Are you sure, Do you really want to ;pgout....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                login obj = new login();
+                obj.Show();
             }
         }
 
@@ -123,28 +121,33 @@ namespace Skills_International
 
         private void add_Click(object sender, EventArgs e)
         {
-            try
+            string yes = comboBox2.Text;
+            if (yes == "New Register")
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
+                try
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
 
-                string Username = user_name.Text;
-                string Password = password.Text;
-                string number = userphone.Text;
+                    string Username = user_name.Text;
+                    string Password = password.Text;
+                    string number = userphone.Text;
 
-                string query = "insert into login values('" + Username + "','" + Password + "','" + number + "')";
-                con.Open();
-                SqlCommand cmd = new(query, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record Added successfully!", "Registered user", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string query = "insert into login values('" + Username + "','" + Password + "','" + number + "')";
+                    con.Open();
+                    SqlCommand cmd = new(query, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Record Added successfully!", "Registered user", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+
+                catch (SqlException ex)
+                {
+                    string msg = "insert Error";
+                    msg += ex.Message;
+                }
             }
 
-            catch (SqlException ex)
-            {
-                string msg = "insert Error";
-                msg += ex.Message;
-            }
         }
 
         private void edit_Click(object sender, EventArgs e)
@@ -183,15 +186,37 @@ namespace Skills_International
             SqlDataAdapter adpt;
             DataTable dt;
 
+            con.Open();
             adpt = new SqlDataAdapter("select * from login", con);
-            dt= new DataTable();
+            dt = new DataTable();
             adpt.Fill(dt);
-            dataGridView1.DataSource= dt;
+            dataGridView1.DataSource = dt;
+            con.Close();
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new(@"Data Source=DESKTOP-ABHLIQU;Initial Catalog=student;Integrated Security=True");
+            con.Open();
+            string query = "select * from login";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+
+        private void NOTICE_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+             landing obj = new landing();
+            obj.Show();
         }
     }
 }

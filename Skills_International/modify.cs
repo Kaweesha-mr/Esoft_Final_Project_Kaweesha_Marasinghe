@@ -67,10 +67,12 @@ namespace Skills_International
 
         private void label4_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure, Do you really want to exit....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            var result = MessageBox.Show("Are you sure, Do you really want to logout....?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                login obj = new login();
+                obj.Show();
             }
         }
 
@@ -173,8 +175,24 @@ namespace Skills_International
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Record Added successfully!", "Registered Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Record Added successfully!", "Registered student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                comboBox1.Text = "";
+                fname.Text = "";
+                lname.Text = "";
+                dob.Format = DateTimePickerFormat.Custom;
+                dob.CustomFormat = "yyyy/MM/dd";
+                DateTime thisDay = DateTime.Today;
+                dob.Text = thisDay.ToString();
+                rbfemale.Checked = false;
+                rbmale.Checked = false;
+                address.Text = "";
+                email.Text = "";
+                mobile.Text = "";
+                home.Text = "";
+                pname.Text = "";
+                nic.Text = "";
+                pnum.Text = "";
             }
 
             catch(SqlException ex)
@@ -252,28 +270,65 @@ namespace Skills_International
             pnum.Text = "";
 
 
+            fname.Focus();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you want to Delete this record", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(result == DialogResult.Yes)
+            if (comboBox1.Text != "New Register")
             {
-                string no = comboBox1.Text;
+                try
+                {
+                    var result = MessageBox.Show("Do you want to Delete this record", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                string query = "DELETE FROM registration WHERE regNo = " + no + "";
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    if (result == DialogResult.Yes)
+                    {
+                        string no = comboBox1.Text;
 
-                MessageBox.Show("Record Deleted successfullt!", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
-;            }
+                        string query = "DELETE FROM registration WHERE regNo = " + no + "";
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                        MessageBox.Show("Record Deleted successfullt!", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ;
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
             else
             {
-                this.Close();
+                MessageBox.Show("Deleting Error", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+        }
+
+
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void NOTICE_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            landing obj = new landing();
+            obj.Show();
         }
     }
 }

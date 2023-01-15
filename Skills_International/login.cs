@@ -60,5 +60,23 @@ namespace Skills_International
             con.Close();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

@@ -43,10 +43,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
@@ -57,6 +59,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NOTICE = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -75,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.NOTICE);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -229,11 +233,24 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Plum;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(-19, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1064, 25);
             this.panel2.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label18.Location = new System.Drawing.Point(1032, -3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(24, 25);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "X";
             // 
             // label5
             // 
@@ -271,6 +288,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.clear);
             this.groupBox3.Controls.Add(this.add);
             this.groupBox3.Controls.Add(this.edit);
@@ -287,6 +305,17 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Parent Details";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(718, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // clear
             // 
@@ -389,6 +418,19 @@
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // NOTICE
+            // 
+            this.NOTICE.AutoSize = true;
+            this.NOTICE.BackColor = System.Drawing.Color.Transparent;
+            this.NOTICE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NOTICE.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.NOTICE.Location = new System.Drawing.Point(48, 99);
+            this.NOTICE.Name = "NOTICE";
+            this.NOTICE.Size = new System.Drawing.Size(89, 28);
+            this.NOTICE.TabIndex = 10;
+            this.NOTICE.Text = "NOTICES";
+            this.NOTICE.Click += new System.EventHandler(this.NOTICE_Click);
+            // 
             // users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -406,6 +448,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "users";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -460,5 +503,8 @@
         private Button add;
         private Button edit;
         private DataGridView dataGridView1;
+        private Button button1;
+        private Label label18;
+        private Label NOTICE;
     }
 }
